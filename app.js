@@ -6,6 +6,7 @@ const path = require('path');
 
 const app = express();
 
+let a = 10
 // Multer configuration for file uploads
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
