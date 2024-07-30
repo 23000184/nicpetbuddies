@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/home">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/producttab">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/services">Services</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <style>
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        .profile-picture img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+    </style>
+    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h2>Profile</h2>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="profile-picture mx-auto mb-3">
+                            <!-- Replace with dynamic image source -->
+                            <img src="images/johndonut.png" alt="Profile Picture">
+                        </div>
+                        <div class="card-text">
+                            <p><strong>User Type:</strong> <%= user.usertype %></p>
+                            <p><strong>Name:</strong> <%= user.firstname %> <%= user.lastname %></p>
+                            <p><strong>Phone Number:</strong> <%= user.phoneNumber %></p>
+                            <p><strong>Date Joined:</strong> <%= new Date(user.dateJoined).toISOString().split('T')[0] %></p>
+                            <!-- Display other user information as needed -->
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="/logout" class="btn btn-danger">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
